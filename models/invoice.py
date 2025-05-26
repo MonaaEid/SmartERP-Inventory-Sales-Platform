@@ -8,7 +8,7 @@ class Invoice(Base):
     __tablename__ = "invoices"
     id = Column(Integer, primary_key=True, index=True)
     customer_name = Column(String(128), nullable=False)
-    total_price = Column(Integer, nullable=False)
+    total_price = Column(Integer)
     invoice_items = relationship('Invoice_Items', backref='Invoice')
 
     created_at = Column(DateTime, default=datetime.utcnow)
